@@ -1,0 +1,66 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #EEEEEE;
+}
+
+.title {
+  font-weight: 500;
+  font-family: 'Mali', cursive;
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+.sticky-notes {
+  background-color: #FFC400;
+  padding-bottom: 60%;
+  border-radius: 7px;
+}
+
+.notes-bar {
+  border-bottom: 2px solid #424242;
+  padding-top:15px;
+  padding-bottom:30px;
+}
+
+.fa {
+  font-size:23px;
+  padding-right: 15px;
+}
+
+.notes-title h4 {
+  font-size: 25px;
+  padding-top: 15px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: 600;
+}
+
+.notes-desc p {
+  font-size: 18px;
+  padding-top: 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #AA00FF;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.add-btn {
+  position: fixed;
+  top: 2%;
+  right: 1%;
+  background-color: #AA00FF;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
