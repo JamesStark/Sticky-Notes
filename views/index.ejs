@@ -48,17 +48,17 @@
         <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
           <div class="col-md-12 sticky-notes form-group">
             <div class="notes-bar">
+              <form method="POST" action="/deletenotes">
               <div class="pull-right">
                 <a data-toggle="modal" data-target="#<%=note._id%>" style="cursor:pointer;">
                   <i style="color:#512DA8" class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
-                <form method="POST" action="/deletenotes">
-                  <input type="hidden"  name="_id" value="<%=note._id%>" id="">
-                  <button type="submit" style="cursor:pointer;" aria-hidden="true">
-                    <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
-                  </button>
-                </form>
+                <input type="hidden"  name="_id" value="<%=note._id%>" id="">
+                <button type="submit" style="cursor:pointer;background:transparent;border:none;outline: none;" aria-hidden="true">
+                  <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
               </div>
+            </form>
             </div>
             <div class="notes-title">
               <h4>
