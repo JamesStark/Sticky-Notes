@@ -1,142 +1,165 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sticky Notes</title>
 
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/sn.png" />
+<head>
+  <title>Sticky Notes</title>
 
-    <!-- Bootstrap Link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/sn.png" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Mali|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap Link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Custom Style -->
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Mali|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
-  <body>
-    <div>
-      <div class="container">
-        <div class="add-btn" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Add New Notes" data-target="#addnotes">
-          <i style="color:#fff;font-size:20px;margin-right:-10px;" class="fa fa-plus" aria-hidden="true"></i>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="title">
-              <span style="color:#880E4F;">S</span><span style="color:#3E2723">t</span><span style="color:#B71C1C">i</span><span style="color:#1A237E">c</span><span style="color:#1B5E20">k</span><span style="color:#E65100
+  <!-- Custom Style -->
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+  <div>
+    <div class="container">
+      <div class="add-btn" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Add New Notes"
+        data-target="#addnotes">
+        <i style="color:#fff;font-size:20px;margin-right:-10px;" class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="title">
+            <span style="color:#880E4F;">S</span><span style="color:#3E2723">t</span><span style="color:#B71C1C">i</span><span
+              style="color:#1A237E">c</span><span style="color:#1B5E20">k</span><span style="color:#E65100
               ">y</span>
-              <span>Notes</span>
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <!-- Foreach function goes here -->
-          <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
-              <div class="col-md-12 sticky-notes form-group">
-                <div class="notes-bar">
-                 <div class="pull-right">
-                     <a data-toggle="modal" data-target="#editnotes" style="cursor:pointer;">
-                       <i style="color:#512DA8" class="fa fa-pencil" aria-hidden="true"></i>
-                     </a>
-                     <a onclick="deleteFunction()" style="cursor:pointer;">
-                       <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
-                     </a>
-                   </div>
-                </div>
-                <div class="notes-title">
-                  <h4>Title</h4>
-                </div>
-                <div class="notes-desc">
-                  <p>notes is the notes that can write or type otes is the notes that can write or type</p>
-                </div>
-              </div> 
-             </div>
-          <!-- ========================== -->
+            <span>Notes</span>
+          </h2>
         </div>
       </div>
     </div>
-
-    <div class="footer">
-      <div class="container">
-        <div class="row" style="padding-top:10px;">
-          <div class="col-md-12">
-            <p style="tex-align:center; font-size:16px;font-family: 'Roboto', sans-serif;
-            ">made with <i style="font-size:16px;padding-right:5px;" class="fa fa-heart" aria-hidden="true"></i>by 
-              <a style="font-weight:500;color:#fff;text-decoration:none;" href="http://www.cubernest.com/">CuberNest & Team</a> </p>
+    <div class="container">
+      <div class="">
+        <!-- Foreach function goes here -->
+        <% notes.forEach(function(note){%>
+        <div class="col-md-4 col-sm-6 col-xs-12 col-lg-4">
+          <div class="col-md-12 sticky-notes form-group">
+            <div class="notes-bar">
+              <div class="pull-right">
+                <a data-toggle="modal" data-target="#<%=note._id%>" style="cursor:pointer;">
+                  <i style="color:#512DA8" class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a onclick="deleteFunction()" style="cursor:pointer;">
+                  <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="notes-title">
+              <h4>
+                <%=note.title%>
+              </h4>
+            </div>
+            <div class="notes-desc">
+              <p>
+                <%=note.description%>
+              </p>
+            </div>
           </div>
+        </div>
+        <!-- edit notes -->
+        <div class="modal fade" id="<%=note._id%>" role="dialog" style="background-color:#FFC400">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">EDIT NOTES</h4>
+              </div><br>
+              <div class="modal-body">
+                <div class="row">
+                  <form method="post" action="/editnotes">
+                    <div class="col-md-12 form-group">
+                      <input placeholder="Enter Title" type="text" class="form-control" value="<%=note.description%>" name="title" id="">
+                      <input placeholder="Enter Title" type="hidden" class="form-control" value="<%=note._id%>" name="title" id="">
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <textarea placeholder="Enter Description..." class="form-control" name="description" id="" cols="30"
+                        rows="10"><%=note.description%></textarea>
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <button typt="submit" class="btn btn-success form-control">Update</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+        <%})%>
+        <!-- ========================== -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="row" style="padding-top:10px;">
+        <div class="col-md-12">
+          <p style="tex-align:center; font-size:16px;font-family: 'Roboto', sans-serif;
+            ">made with <i
+              style="font-size:16px;padding-right:5px;" class="fa fa-heart" aria-hidden="true"></i>by
+            <a style="font-weight:500;color:#fff;text-decoration:none;" href="http://www.cubernest.com/">CuberNest &
+              Team</a> </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="modal fade" id="addnotes" role="dialog" style="background-color:#FFC400">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">MAKE NEW NOTES</h4>
-            </div><br>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <input placeholder="Enter Title" type="text" class="form-control" name="" id="">
-                </div>
-                <div class="col-md-12 form-group">
-                  <textarea placeholder="Enter Description..." class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="col-md-12 form-group">
-                  <button class="btn btn-success form-control">Save</button>
-                </div>
+  <div class="modal fade" id="addnotes" role="dialog" style="background-color:#FFC400">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">MAKE NEW NOTES</h4>
+        </div><br>
+        <div class="modal-body">
+          <div class="row">
+            <form method="post" action="/addnotes">
+              <div class="col-md-12 form-group">
+                <input placeholder="Enter Title" type="text" class="form-control" name="title" id="">
               </div>
-            </div>
-            <div class="modal-footer">
-            </div>
+              <div class="col-md-12 form-group">
+                <textarea placeholder="Enter Description..." class="form-control" name="description" id="" cols="30"
+                  rows="10"></textarea>
+              </div>
+              <div class="col-md-12 form-group">
+                <button type="submit" class="btn btn-success form-control">Save</button>
+              </div>
+            </form>
+
           </div>
         </div>
-      </div>
-
-      <div class="modal fade" id="editnotes" role="dialog" style="background-color:#FFC400">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">EDIT NOTES</h4>
-            </div><br>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <input placeholder="Enter Title" type="text" class="form-control" name="" id="">
-                </div>
-                <div class="col-md-12 form-group">
-                  <textarea placeholder="Enter Description..." class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="col-md-12 form-group">
-                  <button class="btn btn-success form-control">Update</button>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-            </div>
-          </div>
+        <div class="modal-footer">
         </div>
       </div>
+    </div>
+  </div>
 
-      <script>
-        function deleteFunction() {
-            alert("Are you sure, you want to delete this notes.");
-        }
-        $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();   
-        });
-      </script>
 
-  </body>
+
+  <script>
+    function deleteFunction() {
+      alert("Are you sure, you want to delete this notes.");
+    }
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+</body>
+
 </html>
