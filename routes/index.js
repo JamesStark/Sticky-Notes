@@ -33,7 +33,7 @@ router.post("/editnotes",function(req,res){
   let description = req.body.description;
   console.log(req.body)
   let note = { title,description }
-  notes.update({_id:_id},note,function(err,result){
+  notes.findOneAndUpdate({_id:_id},note,function(err,result){
       if(err){
           console.log(err);
           return res.redirect("/");
@@ -52,10 +52,10 @@ router.post("/deletenotes",function(req,res){
   let note = { title,description }
   notes.remove({ _id: req.body.id }, function(err) {
     if (!err) {
-            message.type = 'notification!';
+            res.redirect("/")
     }
     else {
-            message.type = 'error';
+            console.log(err)
     }
   });
   

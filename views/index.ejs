@@ -52,9 +52,12 @@
                 <a data-toggle="modal" data-target="#<%=note._id%>" style="cursor:pointer;">
                   <i style="color:#512DA8" class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
-                <a onclick="deleteFunction()" style="cursor:pointer;">
-                  <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
-                </a>
+                <form method="POST" action="/deletenotes">
+                  <input type="hidden"  name="_id" value="<%note._id%>" id="">
+                  <button type="submit" style="cursor:pointer;">
+                    <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </form>
               </div>
             </div>
             <div class="notes-title">
@@ -81,8 +84,8 @@
                 <div class="row">
                   <form method="post" action="/editnotes">
                     <div class="col-md-12 form-group">
-                      <input placeholder="Enter Title" type="text" class="form-control" value="<%=note.description%>" name="title" id="">
-                      <input placeholder="Enter Title" type="hidden" class="form-control" value="<%=note._id%>" name="title" id="">
+                      <input placeholder="Enter Title" type="text" class="form-control" value="<%=note.title%>" name="title" id="">
+                      <input placeholder="Enter Title" type="hidden" class="form-control" name="_id" value="<%=note._id%>" name="title" id="">
                     </div>
                     <div class="col-md-12 form-group">
                       <textarea placeholder="Enter Description..." class="form-control" name="description" id="" cols="30"
@@ -153,7 +156,7 @@
 
   <script>
     function deleteFunction() {
-      alert("Are you sure, you want to delete this notes.");
+      prompt("Are you sure, you want to delete this notes.");
     }
     $(document).ready(function () {
       $('[data-toggle="tooltip"]').tooltip();
