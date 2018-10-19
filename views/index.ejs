@@ -53,8 +53,8 @@
                   <i style="color:#512DA8" class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
                 <form method="POST" action="/deletenotes">
-                  <input type="hidden"  name="_id" value="<%note._id%>" id="">
-                  <button type="submit" style="cursor:pointer;">
+                  <input type="hidden"  name="_id" value="<%=note._id%>" id="">
+                  <button type="submit" style="cursor:pointer;" aria-hidden="true">
                     <i style="color:#D50000" class="fa fa-trash-o" aria-hidden="true"></i>
                   </button>
                 </form>
@@ -85,7 +85,7 @@
                   <form method="post" action="/editnotes">
                     <div class="col-md-12 form-group">
                       <input placeholder="Enter Title" type="text" class="form-control" value="<%=note.title%>" name="title" id="">
-                      <input placeholder="Enter Title" type="hidden" class="form-control" name="_id" value="<%=note._id%>" name="title" id="">
+                      <input placeholder="Enter Title" type="hidden" class="form-control" value="<%=note._id%>" name="_id" id="">
                     </div>
                     <div class="col-md-12 form-group">
                       <textarea placeholder="Enter Description..." class="form-control" name="description" id="" cols="30"
